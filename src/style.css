@@ -48,18 +48,18 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .header {
     grid-area: header;
-    background: orange;
+    background: #475569;
     padding: 8px;
 }
 
 .side-bar {
     grid-area: side-bar;
-    background: black;
+    background: #64748b;
 }
 
 .main-content {
     grid-area: main-content;
-    background: green;
+    background: #94a3b8;
 }
 
 /* Header Section */
@@ -79,4 +79,5 @@ p, h1, h2, h3, h4, h5, h6 {
 .logo-text {
     font-family: "Montserrat";
     font-size: 50px;
+    color: #f8fafc;
 }
