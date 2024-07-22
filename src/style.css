@@ -64,6 +64,18 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Header Section */
 
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-image {
+    width: 70px;
+    height: auto;
+}
+
 .logo-text {
     font-family: "Montserrat";
     font-size: 50px;
