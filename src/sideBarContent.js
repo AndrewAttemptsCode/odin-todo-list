@@ -13,6 +13,7 @@ export function loadSideBarContent() {
     const addButton = document.createElement("button");
     addButton.classList.add("add-project-button");
     addButton.textContent = "+";
+    addButton.title = "Add new project";
     controlsContainer.appendChild(addButton);
 
     const projectContainer = document.createElement("div");
