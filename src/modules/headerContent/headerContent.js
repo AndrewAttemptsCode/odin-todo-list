@@ -1,4 +1,4 @@
-import checklistImage from "./images/checklist.svg";
+import checklistImage from "../../images/checklist.svg";
 
 export function loadHeaderContent() {
     const header = document.querySelector(".header");
