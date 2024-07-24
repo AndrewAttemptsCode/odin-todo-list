@@ -1,3 +1,5 @@
+import { addProject } from "../sideBarContent/projectData";
+
 export function projectFormEventListeners() {
     const closeButton = document.querySelector(".menu-close");
     const dialog = document.querySelector(".project-dialog");
@@ -7,9 +9,13 @@ export function projectFormEventListeners() {
     });
 
     const projectForm = document.querySelector(".project-form");
+    const projectFormInput = projectForm.querySelector("input[name='projectName']");
 
     projectForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        // add project to projectList array
-    })
+        const projectName = projectFormInput.value;
+        addProject(projectName);
+        dialog.close();
+        projectForm.reset();
+    });
 }
