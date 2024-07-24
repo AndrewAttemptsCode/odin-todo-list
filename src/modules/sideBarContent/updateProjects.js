@@ -1,4 +1,4 @@
-import { getProjects } from "./projectData";
+import { getProjects, removeProject } from "./projectData";
 import deleteImage from "../../images/delete.svg";
 
 export function updateProjects() {
@@ -6,7 +6,7 @@ export function updateProjects() {
     projectContainer.innerHTML = "";
 
     const projects = getProjects();
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
         const projectItem = document.createElement("div");
         projectItem.classList.add("project-item");
         projectItem.textContent = project.name;
@@ -16,9 +16,15 @@ export function updateProjects() {
         hoverControls.classList.add("project-hover-controls");
         projectItem.appendChild(hoverControls);
 
-        const projectDeleteImage = document.createElement("img");
-        projectDeleteImage.src = deleteImage;
-        projectDeleteImage.title = "Delete";
-        hoverControls.appendChild(projectDeleteImage);
+        const projectDelete = document.createElement("img");
+        projectDelete.src = deleteImage;
+        projectDelete.classList.add("delete-project");
+        projectDelete.title = "Delete";
+        hoverControls.appendChild(projectDelete);
+
+        projectDelete.addEventListener("click", () => {
+            removeProject(index);
+        });
+
     });
 }
