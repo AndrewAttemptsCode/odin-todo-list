@@ -89,7 +89,7 @@ p, h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .sidebar-title {
@@ -114,6 +114,16 @@ p, h1, h2, h3, h4, h5, h6 {
 .add-project-button:hover {
     background: #334155;
     color: #f1f5f9;
+}
+
+.project-item {
+    margin: 0 20px 8px 0;
+    padding: 8px 16px;
+    border-radius: 0 10px 10px 0;
+    background: #94a3b8;
+    color: #f1f5f9;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Add Project Dialog */
