@@ -117,6 +117,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 20px 8px 0;
     padding: 8px 16px;
     border-radius: 0 10px 10px 0;
@@ -125,6 +128,17 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 20px;
     font-weight: bold;
 }
+
+.project-hover-controls {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-item:hover .project-hover-controls {
+    opacity: 1;
+    visibility: visible;
+} 
 
 /* Add Project Dialog */
 
