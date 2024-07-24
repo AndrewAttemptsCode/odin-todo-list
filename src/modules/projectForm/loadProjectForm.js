@@ -33,6 +33,7 @@ export function loadProjectForm() {
     inputName.type = "text";
     inputName.name = "projectName";
     inputName.required = true;
+    inputName.maxLength = 20;
     form.appendChild(inputName);
 
     const buttonSubmit = document.createElement("button");
