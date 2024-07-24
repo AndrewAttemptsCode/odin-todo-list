@@ -7,6 +7,11 @@ export function addProject(projectName) {
     updateProjects();
 }
 
+export function removeProject(index) {
+    projectList.splice(index, 1);
+    updateProjects();
+}
+
 export function getProjects() {
     return projectList;
 }
