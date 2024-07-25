@@ -96,7 +96,8 @@ p, h1, h2, h3, h4, h5, h6 {
     color: #f1f5f9;
 }
 
-.add-project-button {
+.add-project-button,
+.add-task-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,6 +106,7 @@ p, h1, h2, h3, h4, h5, h6 {
     border: none;
     border-radius: 50%;
     font-size: 25px;
+    font-weight: bold;
     background: #f1f5f9;
     color: #334155;
     transition: background 0.5s ease, color 0.5s ease;
@@ -127,6 +129,7 @@ p, h1, h2, h3, h4, h5, h6 {
     color: #f1f5f9;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .project-hover-controls {
@@ -191,4 +194,46 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background: #22c55e7c;
     cursor: pointer;
+}
+
+/* Main Content */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 8px 16px;
+    background: #475569;
+    border-radius: 5px;
+}
+
+.main-project-title {
+    color: #f8fafc;
+    font-size: 4rem;
+}
+
+.add-task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    gap: 10px;
+    background: #334155;
+    color: #f1f5f9;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.add-task-container:hover {
+    color: #334155;
+    background: #f1f5f9;
+}
+
+.add-task-container:hover .add-task-button {
+    background: #334155;
+    color: #f1f5f9;
 }
