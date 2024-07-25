@@ -132,6 +132,10 @@ p, h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+.project-item.selected {
+    background: #334155;
+}
+
 .project-hover-controls {
     cursor: pointer;
     opacity: 0;
