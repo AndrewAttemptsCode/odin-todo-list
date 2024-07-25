@@ -7,6 +7,9 @@ export function updateProjects() {
     projectContainer.innerHTML = "";
 
     const projects = getProjects();
+
+    let currentSelectedProject = null;
+
     projects.forEach((project, index) => {
         const projectItem = document.createElement("div");
         projectItem.classList.add("project-item");
@@ -28,6 +31,10 @@ export function updateProjects() {
         });
 
         projectItem.addEventListener("click", () => {
+            currentSelectedProject ? currentSelectedProject.classList.remove("selected") : null;
+            projectItem.classList.add("selected");
+            currentSelectedProject = projectItem;
+
             loadMainContent(project.name);
             // UpdateTasks
         })
