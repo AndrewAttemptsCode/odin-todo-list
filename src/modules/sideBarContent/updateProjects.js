@@ -1,5 +1,6 @@
 import { getProjects, removeProject } from "./projectData";
 import deleteImage from "../../images/delete.svg";
+import { loadMainContent } from "../mainContent/loadMainContents";
 
 export function updateProjects() {
     const projectContainer = document.querySelector(".project-container");
@@ -25,6 +26,11 @@ export function updateProjects() {
         projectDelete.addEventListener("click", () => {
             removeProject(index);
         });
+
+        projectItem.addEventListener("click", () => {
+            loadMainContent(project.name);
+            // UpdateTasks
+        })
 
     });
 }
