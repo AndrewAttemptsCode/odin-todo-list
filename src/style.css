@@ -181,7 +181,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .project-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     padding: 10px;
     background: #f1f5f9;
 }
@@ -194,6 +193,7 @@ p, h1, h2, h3, h4, h5, h6 {
 button[type="submit"] {
     border: 1px solid #334155;
     border-radius: 5px;
+    margin-top: 15px;
 }
 
 button[type="submit"]:hover {
@@ -241,4 +241,37 @@ button[type="submit"]:hover {
 .add-task-container:hover .add-task-button {
     background: #334155;
     color: #f1f5f9;
+}
+
+/* Add Task Dialog */
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #f1f5f9;
+    min-width: 245px;
+}
+
+.task-form label,
+.task-form button {
+    margin-top: 15px;
+}
+
+.task-form-input,
+.project-name {
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #94a3b8;
+    border-radius: 4px;
+    background: #f1f5f9;
+}
+
+.task-description {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #94a3b8;
+    border-radius: 4px;
+    background: #f1f5f9;
 }
