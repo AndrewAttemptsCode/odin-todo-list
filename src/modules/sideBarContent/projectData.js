@@ -3,8 +3,13 @@ import { updateProjects} from "./updateProjects";
 let projectList = [];
 
 export function addProject(projectName) {
-    projectList.push({name: projectName});
+    projectList.push({ name: projectName, tasks: [] });
     updateProjects();
+}
+
+export function addTaskToProject(projectName, task) {
+    const project = projectList.find(proj => proj.name === projectName);
+    project.tasks.push(task);
 }
 
 export function removeProject(index) {
