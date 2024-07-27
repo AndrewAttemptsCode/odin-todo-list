@@ -1,6 +1,7 @@
 import { getProjects, removeProject } from "./projectData";
 import deleteImage from "../../images/delete.svg";
 import { loadMainContent } from "../mainContent/loadMainContents";
+import { taskFormEventListeners } from "../mainContent/addEventListeners";
 
 export function updateProjects() {
     const projectContainer = document.querySelector(".project-container");
@@ -36,6 +37,7 @@ export function updateProjects() {
             currentSelectedProject = projectItem;
 
             loadMainContent(project.name);
+            taskFormEventListeners();
             // UpdateTasks
         })
 
