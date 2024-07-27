@@ -1,7 +1,7 @@
 import { addProject } from "../sideBarContent/projectData";
 
 export function projectFormEventListeners() {
-    const closeButton = document.querySelector(".menu-close");
+    const closeButton = document.querySelector(".project-dialog .menu-close");
     const dialog = document.querySelector(".project-dialog");
 
     closeButton.addEventListener("click", () => {
