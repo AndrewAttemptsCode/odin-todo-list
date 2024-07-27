@@ -29,7 +29,7 @@ export function loadProjectForm() {
     form.appendChild(labelName);
 
     const inputName = document.createElement("input");
-    inputName.classList.add = "project-name";
+    inputName.classList.add("project-name");
     inputName.type = "text";
     inputName.name = "projectName";
     inputName.required = true;
