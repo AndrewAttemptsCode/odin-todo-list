@@ -87,6 +87,7 @@ export function loadTaskForm() {
     taskDueDate.id = "taskDueDate";
     taskDueDate.classList.add("task-form-input");
     taskDueDate.name = "taskDueDate";
+    taskDueDate.required = true;
     form.appendChild(taskDueDate);
 
     const buttonSubmit = document.createElement("button");
