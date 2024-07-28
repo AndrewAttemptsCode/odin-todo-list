@@ -1,3 +1,4 @@
+import { updateTasks } from "../mainContent/updateTasks";
 import { addTaskToProject } from "../sideBarContent/projectData";
 
 export function taskFormEventListeners(selectedProjectName) {
@@ -25,6 +26,7 @@ export function taskFormEventListeners(selectedProjectName) {
         };
 
         addTaskToProject(selectedProjectName, task);
+        updateTasks();
         dialog.close();
         taskForm.reset();
     });
