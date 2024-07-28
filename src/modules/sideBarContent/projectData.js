@@ -1,4 +1,4 @@
-import { updateProjects} from "./updateProjects";
+import { updateProjects } from "./updateProjects";
 
 let projectList = [];
 
@@ -19,4 +19,13 @@ export function removeProject(index) {
 
 export function getProjects() {
     return projectList;
+}
+
+export function getCurrentProjectName() {
+    const projectTitleElement = document.querySelector(".main-project-title");
+    return projectTitleElement ? projectTitleElement.textContent : null;
+}
+
+export function getCurrentProject(projectName) {
+    return projectList.find(proj => proj.name === projectName);
 }
