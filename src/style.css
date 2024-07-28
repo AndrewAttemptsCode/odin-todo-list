@@ -243,6 +243,17 @@ button[type="submit"]:hover {
     color: #f1f5f9;
 }
 
+.task-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 20px 0 20px;
+    padding: 8px 16px;
+    color: #f1f5f9;
+    background: #475569;
+    border-radius: 5px;
+}
+
 /* Add Task Dialog */
 
 .task-form {
