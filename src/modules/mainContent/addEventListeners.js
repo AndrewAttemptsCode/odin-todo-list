@@ -1,7 +1,7 @@
 import { loadTaskForm } from "../taskForm/loadTaskForm";
 import { taskFormEventListeners } from "../taskForm/addEventListeners";
 
-export function mainEventListeners() {
+export function mainEventListeners(selectedProjectName) {
     const addTaskButton = document.querySelector(".add-task-container");
     
     loadTaskForm();
@@ -10,7 +10,6 @@ export function mainEventListeners() {
         const dialog = document.querySelector(".task-dialog");
         dialog.showModal();
 
-        const selectedProjectName = document.querySelector(".main-project-title").textContent;
         taskFormEventListeners(selectedProjectName);
     });
 

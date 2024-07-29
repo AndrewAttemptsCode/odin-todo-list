@@ -32,7 +32,7 @@ export function taskFormEventListeners(selectedProjectName) {
         };
 
         addTaskToProject(selectedProjectName, task);
-        updateTasks();
+        updateTasks(selectedProjectName);
         dialog.close();
         taskForm.reset();
     });

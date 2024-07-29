@@ -47,7 +47,7 @@ export function loadTaskForm() {
 
     const taskDescription = document.createElement("textarea");
     taskDescription.id = "taskDescription";
-    taskDescription.classList.add("task-description");
+    taskDescription.classList.add("task-form-description");
     taskDescription.name = "taskDescription";
     taskDescription.required = false;
     taskDescription.maxLength = 100;

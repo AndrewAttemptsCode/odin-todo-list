@@ -2,6 +2,7 @@ import { getProjects, removeProject } from "./projectData";
 import deleteImage from "../../images/delete.svg";
 import { loadMainContent } from "../mainContent/loadMainContents";
 import { mainEventListeners } from "../mainContent/addEventListeners";
+import { updateTasks } from "../mainContent/updateTasks";
 
 export function updateProjects() {
     const projectContainer = document.querySelector(".project-container");
@@ -9,7 +10,7 @@ export function updateProjects() {
 
     const projects = getProjects();
 
-    let currentSelectedProject = null;
+    let currentSelectedProjectName = null;
 
     projects.forEach((project, index) => {
         const projectItem = document.createElement("div");
@@ -32,13 +33,18 @@ export function updateProjects() {
         });
 
         projectItem.addEventListener("click", () => {
-            currentSelectedProject ? currentSelectedProject.classList.remove("selected") : null;
+            if (currentSelectedProjectName) {
+                const previousSelected = document.querySelector(`.project-item.selected`);
+                if (previousSelected) {
+                    previousSelected.classList.remove("selected");
+                }
+            }
             projectItem.classList.add("selected");
-            currentSelectedProject = projectItem;
+            currentSelectedProjectName = project.name;
 
             loadMainContent(project.name);
-            mainEventListeners();
-        })
-
+            mainEventListeners(project.name);
+            updateTasks(project.name);
+        });
     });
 }
