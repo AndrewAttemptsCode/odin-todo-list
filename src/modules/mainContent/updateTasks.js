@@ -22,23 +22,18 @@ export function updateTasks() {
         taskHeader.appendChild(taskTitle);
     }
 
-    let tasksContainer = mainContent.querySelector(".tasks-container-wrapper");
-    if (!tasksContainer) {
-        tasksContainer = document.createElement("div");
-        tasksContainer.classList.add("tasks-container-wrapper");
-        mainContent.appendChild(tasksContainer);
-    }
-
-    let tasksItemContainer = tasksContainer.querySelector(".tasks-item-container");
+    let tasksItemContainer = mainContent.querySelector(".tasks-item-container");
     if (!tasksItemContainer) {
         tasksItemContainer = document.createElement("div");
         tasksItemContainer.classList.add("tasks-item-container");
-        tasksContainer.appendChild(tasksItemContainer);
+        mainContent.appendChild(tasksItemContainer);
     } else {
+        console.log('Clearing existing tasks'); // check to see if clearing the innerhtml
         tasksItemContainer.innerHTML = "";
     }
 
     project.tasks.forEach(task => {
+        console.log(`Adding task: ${task.title}`); // debug
         const taskCard = document.createElement("div");
         taskCard.classList.add("task-card");
 

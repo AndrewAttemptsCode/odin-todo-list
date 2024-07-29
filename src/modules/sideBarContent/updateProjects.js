@@ -38,7 +38,6 @@ export function updateProjects() {
 
             loadMainContent(project.name);
             mainEventListeners();
-            // UpdateTasks
         })
 
     });

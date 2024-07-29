@@ -1,7 +1,13 @@
 import { updateTasks } from "../mainContent/updateTasks";
 import { addTaskToProject } from "../sideBarContent/projectData";
 
+let eventListenersAdded = false;
+
 export function taskFormEventListeners(selectedProjectName) {
+    if (eventListenersAdded) {
+        return;
+    }
+
     const closeButton = document.querySelector(".task-dialog .menu-close");
     const dialog = document.querySelector(".task-dialog");
 
@@ -30,4 +36,6 @@ export function taskFormEventListeners(selectedProjectName) {
         dialog.close();
         taskForm.reset();
     });
+
+    eventListenersAdded = true;
 }
