@@ -24,20 +24,21 @@ export function loadProjectForm() {
     form.method = "dialog";
     dialog.appendChild(form);
 
-    const labelName = document.createElement("label");
-    labelName.textContent = "Project Name: ";
-    form.appendChild(labelName);
+    const labelProjectName = document.createElement("label");
+    labelProjectName.textContent = "Project Name: ";
+    form.appendChild(labelProjectName);
 
-    const inputName = document.createElement("input");
-    inputName.classList.add("project-name");
-    inputName.type = "text";
-    inputName.name = "projectName";
-    inputName.required = true;
-    inputName.maxLength = 20;
-    form.appendChild(inputName);
+    const inputProjectName = document.createElement("input");
+    inputProjectName.classList.add("project-name");
+    inputProjectName.type = "text";
+    inputProjectName.name = "projectName";
+    inputProjectName.required = true;
+    inputProjectName.maxLength = 20;
+    form.appendChild(inputProjectName);
 
     const buttonSubmit = document.createElement("button");
     buttonSubmit.type = "submit";
+    buttonSubmit.classList.add(".project-submit-button");
     buttonSubmit.textContent = "Add project";
     form.appendChild(buttonSubmit);
 

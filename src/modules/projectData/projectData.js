@@ -68,3 +68,5 @@ export class ToDoList {
         }
     }
 }
+
+export const toDoList = new ToDoList();
