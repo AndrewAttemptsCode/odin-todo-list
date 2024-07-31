@@ -1,26 +1,70 @@
-import { updateProjects } from "./updateProjects";
+// Task Class
+export class Task {
+    constructor(title, description, priority, dueDate) {
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.completed = false;
+    }
 
-let projectList = [];
-
-export function addProject(projectName) {
-    projectList.push({ name: projectName, tasks: [] });
-    updateProjects();
+    toggleComplete() {
+        this.completed = !this.completed;
+    }
 }
 
-export function addTaskToProject(projectName, task) {
-    const project = projectList.find(proj => proj.name === projectName);
-    project.tasks.push(task);
+// Project Class
+export class Project {
+    constructor(name) {
+        this.name = name;
+        this.tasks = [];
+    }
+
+    addTask(title, description, priority, dueDate) {
+        const task = new Task(title, description, priority, dueDate);
+        this.tasks.push(task);
+    }
+
+    getTasks() {
+        return this.tasks;
+    }
 }
 
-export function removeProject(index) {
-    projectList.splice(index, 1);
-    updateProjects();
-}
+// ToDoList Class
 
-export function getProjects() {
-    return projectList;
-}
+export class ToDoList {
+    constructor() {
+        this.projects = [];
+        this.selectedProject = null;
+    }
 
-export function getCurrentProject(projectName) {
-    return projectList.find(proj => proj.name === projectName);
+    addProject(projectName) {
+        const project = new Project(projectName);
+        this.projects.push(project);
+    }
+
+    selectProject(projectName) {
+        this.selectedProject = this.projects.find(project => project.name === projectName);
+    }
+
+    addTaskToSelectedProject(title, description, priority, dueDate) {
+        if (this.selectedProject) {
+            this.selectedProject.addTask(title, description, priority, dueDate);
+        } else {
+            console.log("No project selected");
+        }
+    }
+
+    getProjects() {
+        this.projects;
+    }
+
+    getTasksOfSelectedProject() {
+        if (this.selectedProject) {
+            return this.selectedProject.getTasks();
+        } else {
+            console.log("No project selected");
+            return [];
+        }
+    }
 }
