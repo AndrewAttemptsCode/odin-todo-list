@@ -9,6 +9,6 @@ export function sideBarEventListeners() {
 
     addNewProjectButton.addEventListener("click", () => {
         projectDialog.showModal();
-        projectFormEventListeners();
+        // projectFormEventListeners(); - set in index.js on dom load, prevent dupe listener
     })
 }

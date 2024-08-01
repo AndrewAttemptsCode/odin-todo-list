@@ -43,6 +43,10 @@ export class ToDoList {
         this.projects.push(project);
     }
 
+    removeProject(projectIndex) {
+        this.projects.splice(projectIndex, 1);
+    }
+
     selectProject(projectName) {
         this.selectedProject = this.projects.find(project => project.name === projectName);
     }
@@ -56,7 +60,7 @@ export class ToDoList {
     }
 
     getProjects() {
-        this.projects;
+        return this.projects;
     }
 
     getTasksOfSelectedProject() {

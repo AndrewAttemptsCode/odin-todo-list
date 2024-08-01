@@ -1,4 +1,5 @@
 import { toDoList } from "../projectData/projectData";
+import { updateProjectsList } from "../sideBarContent/updateProjects";
 
 export function projectFormEventListeners() {
     const projectForm = document.querySelector(".project-form");
@@ -8,9 +9,9 @@ export function projectFormEventListeners() {
     
         const projectName = document.querySelector(".project-name").value;
         toDoList.addProject(projectName);
+        updateProjectsList();
         projectDialog.close();
         projectForm.reset();
-        // do something to update the project list next after clicking submit button on project form
     })
 
     const closeButton = document.querySelector(".menu-close");
