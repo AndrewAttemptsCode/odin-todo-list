@@ -8,6 +8,16 @@ export function projectFormEventListeners() {
         event.preventDefault();
     
         const projectName = document.querySelector(".project-name").value;
+        
+        const projects = toDoList.getProjects();
+        const existingProject = projects.find(project => project.name === projectName);
+
+        if (existingProject) {
+            alert("A project with this name already exists.");
+            projectForm.reset();
+            return;
+        }
+
         toDoList.addProject(projectName);
         updateProjectsList();
         projectDialog.close();

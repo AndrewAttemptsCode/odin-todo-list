@@ -13,5 +13,18 @@ export function loadMainContent() {
     projectTitle.textContent = toDoList.selectedProject.name;
     mainHeader.appendChild(projectTitle);
 
-    // finish the template
+    const addTaskContainer = document.createElement("div");
+    addTaskContainer.classList.add("add-task-container");
+    addTaskContainer.title = "Add new task";
+    mainHeader.appendChild(addTaskContainer);
+    
+    const addButtonText = document.createElement("p");
+    addButtonText.classList.add("add-task-button-text");
+    addButtonText.textContent = "Add Task";
+    addTaskContainer.appendChild(addButtonText);
+
+    const addButton = document.createElement("button");
+    addButton.classList.add("add-task-button");
+    addButton.textContent = "+";
+    addTaskContainer.appendChild(addButton);
 }
