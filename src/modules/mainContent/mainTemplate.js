@@ -10,7 +10,7 @@ export function loadMainContent() {
 
     const projectTitle = document.createElement("h1");
     projectTitle.classList.add("main-project-title");
-    projectTitle.textContent = toDoList.selectedProject.name; // TypeError: Cannot read properties of undefined (reading 'name')
+    projectTitle.textContent = toDoList.selectedProject.name;
     mainHeader.appendChild(projectTitle);
 
     // finish the template

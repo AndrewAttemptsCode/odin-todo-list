@@ -11,6 +11,7 @@ export function updateProjectsList() {
         const projectItem = document.createElement("div");
         projectItem.classList.add("project-item");
         projectItem.textContent = project.name;
+        projectItem.dataset.index = index;
         projectContainer.appendChild(projectItem);
 
         const hoverControls = document.createElement("div");
@@ -22,15 +23,22 @@ export function updateProjectsList() {
         removeProjectButton.classList.add("remove-project-button");
         hoverControls.appendChild(removeProjectButton);
 
-        removeProjectButton.addEventListener("click", () => {
-            toDoList.removeProject(index);
+        removeProjectButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const projectIndex = Number(projectItem.dataset.index);
+            const projectName = toDoList.getProjects()[projectIndex].name;
+            toDoList.removeProject(projectIndex);
             updateProjectsList();
+
+            if (toDoList.selectedProject && toDoList.selectedProject.name === projectName) {
+                toDoList.selectedProject = null;
+                const mainContent = document.querySelector(".main-content");
+                mainContent.innerHTML = "";
+            }
         })
 
-        // When project is clicked on, it loads the main content template
         projectItem.addEventListener("click", () => {
-            const projectSelection = projects[index].name;
-            toDoList.selectProject(projectSelection);
+            toDoList.selectProject(project.name);
             loadMainContent();
         })
 
