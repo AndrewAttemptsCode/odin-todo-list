@@ -14,7 +14,7 @@ export function loadProjectForm() {
     menuBar.appendChild(menuTitle);
 
     const close = document.createElement("button");
-    close.classList.add("menu-close");
+    close.classList.add("project-menu-close");
     close.textContent = "x";
     close.title = "Close";
     menuBar.appendChild(close);

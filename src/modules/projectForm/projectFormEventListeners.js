@@ -24,7 +24,7 @@ export function projectFormEventListeners() {
         projectForm.reset();
     })
 
-    const closeButton = document.querySelector(".menu-close");
+    const closeButton = document.querySelector(".project-menu-close");
     const projectDialog = document.querySelector(".project-dialog");
     closeButton.addEventListener("click", () => {
         projectDialog.close();

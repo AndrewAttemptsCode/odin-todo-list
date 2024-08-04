@@ -14,7 +14,7 @@ export function loadTaskForm() {
     menuBar.appendChild(menuTitle);
 
     const close = document.createElement("button");
-    close.classList.add("menu-close");
+    close.classList.add("task-menu-close");
     close.textContent = "x";
     close.title = "Close";
     menuBar.appendChild(close);

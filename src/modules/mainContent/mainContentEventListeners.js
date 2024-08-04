@@ -1,4 +1,5 @@
 import { loadTaskForm } from "../taskForm/taskForm";
+import { taskFormEventListeners } from "../taskForm/taskFormEventListeners";
 
 export function mainContentEventListeners() {
     loadTaskForm();
@@ -8,5 +9,6 @@ export function mainContentEventListeners() {
 
     addNewTaskButton.addEventListener("click", () => {
         taskDialog.showModal();
+        taskFormEventListeners();
     })
 }

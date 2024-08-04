@@ -170,7 +170,8 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-left: 5px;
 }
 
-.menu-close {
+.project-menu-close,
+.task-menu-close {
     border: none;
     background: #334155;
     color: #f1f5f9;
@@ -185,7 +186,8 @@ p, h1, h2, h3, h4, h5, h6 {
     background: #f1f5f9;
 }
 
-.menu-close:hover {
+.project-menu-close:hover,
+.task-menu-close:hover {
     background: #ff8080;
     cursor: pointer;
 }
