@@ -1,6 +1,4 @@
-// event listeners for
-//  close dialog
-//  submit data
+import { toDoList } from "../projectData/projectData";
 
 export function taskFormEventListeners() {
     const taskDialog = document.querySelector(".task-dialog");
@@ -11,4 +9,11 @@ export function taskFormEventListeners() {
         taskDialog.close();
         taskForm.reset();
     })
+
+    taskForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log("Test submit");
+        // add form input values as a task to selected project
+    })   
+    
 }

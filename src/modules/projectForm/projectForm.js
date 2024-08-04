@@ -19,14 +19,14 @@ export function loadProjectForm() {
     close.title = "Close";
     menuBar.appendChild(close);
 
-    const form = document.createElement("form");
-    form.classList.add("project-form");
-    form.method = "dialog";
-    dialog.appendChild(form);
+    const projectForm = document.createElement("form");
+    projectForm.classList.add("project-form");
+    projectForm.method = "dialog";
+    dialog.appendChild(projectForm);
 
     const labelProjectName = document.createElement("label");
     labelProjectName.textContent = "Project Name: ";
-    form.appendChild(labelProjectName);
+    projectForm.appendChild(labelProjectName);
 
     const inputProjectName = document.createElement("input");
     inputProjectName.classList.add("project-name");
@@ -34,12 +34,12 @@ export function loadProjectForm() {
     inputProjectName.name = "projectName";
     inputProjectName.required = true;
     inputProjectName.maxLength = 20;
-    form.appendChild(inputProjectName);
+    projectForm.appendChild(inputProjectName);
 
     const buttonSubmit = document.createElement("button");
     buttonSubmit.type = "submit";
-    buttonSubmit.classList.add(".project-submit-button");
+    buttonSubmit.classList.add("project-submit-button");
     buttonSubmit.textContent = "Add project";
-    form.appendChild(buttonSubmit);
+    projectForm.appendChild(buttonSubmit);
 
 }

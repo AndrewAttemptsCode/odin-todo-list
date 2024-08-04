@@ -1,13 +1,13 @@
 export function loadTaskForm() {
     const toDoApp = document.querySelector("#todo-app");
 
-    const dialog = document.createElement("dialog");
-    dialog.classList.add("task-dialog");
-    toDoApp.appendChild(dialog);
+    const taskDialog = document.createElement("dialog");
+    taskDialog.classList.add("task-dialog");
+    toDoApp.appendChild(taskDialog);
 
     const menuBar = document.createElement("div");
     menuBar.classList.add("menu-bar");
-    dialog.appendChild(menuBar);
+    taskDialog.appendChild(menuBar);
 
     const menuTitle = document.createElement("p");
     menuTitle.textContent = "Create new Task...";
@@ -19,17 +19,17 @@ export function loadTaskForm() {
     close.title = "Close";
     menuBar.appendChild(close);
 
-    const form = document.createElement("form");
-    form.classList.add("task-form");
-    form.method = "dialog";
-    dialog.appendChild(form);
+    const taskForm = document.createElement("form");
+    taskForm.classList.add("task-form");
+    taskForm.method = "dialog";
+    taskDialog.appendChild(taskForm);
 
     // Form Fields
 
     const labelTitle = document.createElement("label");
     labelTitle.setAttribute("for", "taskTitle");
     labelTitle.textContent = "Title:";
-    form.appendChild(labelTitle);
+    taskForm.appendChild(labelTitle);
 
     const taskTitle = document.createElement("input");
     taskTitle.id = "taskTitle";
@@ -38,12 +38,12 @@ export function loadTaskForm() {
     taskTitle.name = "taskTitle";
     taskTitle.required = true;
     taskTitle.maxLength = 20;
-    form.appendChild(taskTitle);
+    taskForm.appendChild(taskTitle);
 
     const labelDescription = document.createElement("label");
     labelDescription.setAttribute("for", "taskDescription");
     labelDescription.textContent = "Description:"
-    form.appendChild(labelDescription);
+    taskForm.appendChild(labelDescription);
 
     const taskDescription = document.createElement("textarea");
     taskDescription.id = "taskDescription";
@@ -51,19 +51,19 @@ export function loadTaskForm() {
     taskDescription.name = "taskDescription";
     taskDescription.required = false;
     taskDescription.maxLength = 100;
-    form.appendChild(taskDescription);
+    taskForm.appendChild(taskDescription);
 
     const labelPriority = document.createElement("label");
     labelPriority.setAttribute("for", "taskPriority");
     labelPriority.textContent = "Priority:";
-    form.appendChild(labelPriority);
+    taskForm.appendChild(labelPriority);
 
     const taskPriority = document.createElement("select");
     taskPriority.id = "taskPriority";
     taskPriority.classList.add("task-form-input");
     taskPriority.name = "taskPriority";
     taskPriority.required = true;
-    form.appendChild(taskPriority);
+    taskForm.appendChild(taskPriority);
 
     const lowPriority = document.createElement("option");
     lowPriority.textContent = "Low";
@@ -80,7 +80,7 @@ export function loadTaskForm() {
     const labelDate = document.createElement("label");
     labelDate.setAttribute("for", "taskDueDate");
     labelDate.textContent = "Due Date:";
-    form.appendChild(labelDate);
+    taskForm.appendChild(labelDate);
 
     const taskDueDate = document.createElement("input");
     taskDueDate.type = "date";
@@ -88,11 +88,12 @@ export function loadTaskForm() {
     taskDueDate.classList.add("task-form-input");
     taskDueDate.name = "taskDueDate";
     taskDueDate.required = true;
-    form.appendChild(taskDueDate);
+    taskForm.appendChild(taskDueDate);
 
-    const buttonSubmit = document.createElement("button");
-    buttonSubmit.type = "submit";
-    buttonSubmit.textContent = "Add task";
-    form.appendChild(buttonSubmit);
+    const taskButtonSubmit = document.createElement("button");
+    taskButtonSubmit.type = "submit";
+    taskButtonSubmit.classList.add("task-submit-button");
+    taskButtonSubmit.textContent = "Add task";
+    taskForm.appendChild(taskButtonSubmit);
 
 }
