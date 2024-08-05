@@ -16,8 +16,13 @@ export function taskFormEventListeners() {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        console.log("Test submit");
-        // add form input values as a task to selected project   
+
+        const taskTitle = taskForm.querySelector("#taskTitle").value;
+        const taskDescription = taskForm.querySelector("#taskDescription").value;
+        const taskPriority = taskForm.querySelector("#taskPriority").value;
+        const taskDueDate = taskForm.querySelector("#taskDueDate").value;
+
+        toDoList.addTaskToSelectedProject(taskTitle, taskDescription, taskPriority, taskDueDate);
     };
 
     closeButton.addEventListener("click", closeHandler);
