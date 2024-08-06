@@ -23,6 +23,7 @@ export function taskFormEventListeners() {
         const taskDueDate = taskForm.querySelector("#taskDueDate").value;
 
         toDoList.addTaskToSelectedProject(taskTitle, taskDescription, taskPriority, taskDueDate);
+        closeHandler();
     };
 
     closeButton.addEventListener("click", closeHandler);
