@@ -1,7 +1,7 @@
-// update dom display of tasks added/removed/completed
-// if tasks length > 1 run this module
+// update dom display of tasks removed/completed
 
 import { toDoList } from "../projectData/projectData";
+import removeTaskButtonImage from "../../images/delete.svg";
 
 export function updateTaskList() {
     const mainContent = document.querySelector(".main-content");
@@ -25,7 +25,7 @@ export function updateTaskList() {
     }
     
     let tasksContainer = mainContent.querySelector(".tasks-item-container");
-    
+
     if (taskHeader && !tasksContainer) {
         tasksContainer = document.createElement("div");
         tasksContainer.classList.add("tasks-item-container");
@@ -36,8 +36,9 @@ export function updateTaskList() {
         tasksContainer.innerHTML = "";
     }
 
-    tasks.forEach(task => {
+    tasks.forEach((task, index) => {
         const taskCard = document.createElement("div");
+        taskCard.dataset.index = index;
         taskCard.classList.add("task-card");
 
         // Contents of each card: title, description, priority, due date
@@ -53,13 +54,24 @@ export function updateTaskList() {
 
         const priority = document.createElement("p");
         priority.classList.add("task-card-priority");
-        priority.textContent = task.priority;
+        priority.textContent = `Priority: ${task.priority}`;
         taskCard.appendChild(priority);
 
         const dueDate = document.createElement("p");
         dueDate.classList.add("task-card-duedate");
-        dueDate.textContent = task.dueDate;
+        dueDate.textContent = `Due Date: ${task.dueDate}`;
         taskCard.appendChild(dueDate);
+
+        const taskHoverControls = document.createElement("div");
+        taskHoverControls.classList.add("task-hover-controls");
+        taskCard.appendChild(taskHoverControls);
+
+        const removeTaskButton = document.createElement("img");
+        removeTaskButton.src = removeTaskButtonImage;
+        removeTaskButton.title = "Remove task";
+        removeTaskButton.classList.add("remove-task-button");
+        taskHoverControls.appendChild(removeTaskButton);
+
 
         tasksContainer.appendChild(taskCard);
     })
