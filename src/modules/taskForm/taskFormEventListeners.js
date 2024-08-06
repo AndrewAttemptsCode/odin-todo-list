@@ -1,3 +1,4 @@
+import { updateTaskList } from "../mainContent/updateTasks";
 import { toDoList } from "../projectData/projectData";
 
 let taskFormListenersAttached = false;
@@ -24,6 +25,7 @@ export function taskFormEventListeners() {
 
         toDoList.addTaskToSelectedProject(taskTitle, taskDescription, taskPriority, taskDueDate);
         closeHandler();
+        updateTaskList();
     };
 
     closeButton.addEventListener("click", closeHandler);

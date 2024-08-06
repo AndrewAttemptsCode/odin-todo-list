@@ -2,6 +2,7 @@ import { toDoList } from "../projectData/projectData";
 import removeProjectButtonImage from "../../images/delete.svg";
 import { loadMainContent } from "../mainContent/mainTemplate";
 import { mainContentEventListeners } from "../mainContent/mainContentEventListeners";
+import { updateTaskList } from "../mainContent/updateTasks";
 
 export function updateProjectsList() {
     const projects = toDoList.getProjects();
@@ -42,6 +43,7 @@ export function updateProjectsList() {
             toDoList.selectProject(project.name);
             loadMainContent();
             mainContentEventListeners();
+            updateTaskList();
         })
 
     });
