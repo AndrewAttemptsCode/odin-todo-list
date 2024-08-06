@@ -22,6 +22,7 @@ export function updateProjectsList() {
 
         const removeProjectButton = document.createElement("img");
         removeProjectButton.src = removeProjectButtonImage;
+        removeProjectButton.title = "Remove project";
         removeProjectButton.classList.add("remove-project-button");
         hoverControls.appendChild(removeProjectButton);
 
