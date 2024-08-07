@@ -1,4 +1,5 @@
-// update dom display of tasks completed
+// update dom to edit and update existing task
+// change taskCard background based on priority level
 
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
