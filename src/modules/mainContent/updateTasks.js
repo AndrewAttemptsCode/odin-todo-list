@@ -42,6 +42,10 @@ export function updateTaskList() {
         taskCard.dataset.index = index;
         taskCard.classList.add("task-card");
 
+        if (task.completed) {
+            taskCard.classList.add("task-completed");
+        }
+
         // Contents of each card: title, description, priority, due date
         const title = document.createElement("h2");
         title.classList.add("task-card-title");
@@ -67,6 +71,14 @@ export function updateTaskList() {
         taskHoverControls.classList.add("task-hover-controls");
         taskCard.appendChild(taskHoverControls);
 
+        const taskCheckBox = document.createElement("input");
+        taskCheckBox.type = "checkbox";
+        taskCheckBox.name = "taskComplete";
+        taskCheckBox.checked = task.completed;
+        taskCheckBox.title = "Mark task as complete";
+        taskCheckBox.classList.add("task-checkbox");
+        taskHoverControls.appendChild(taskCheckBox);
+
         const removeTaskButton = document.createElement("img");
         removeTaskButton.src = removeTaskButtonImage;
         removeTaskButton.title = "Remove task";
@@ -79,6 +91,11 @@ export function updateTaskList() {
             event.stopPropagation();
             const taskIndex = Number(taskCard.dataset.index);
             toDoList.removeTask(taskIndex);
+            updateTaskList();
+        })
+
+        taskCheckBox.addEventListener("change", () => {
+            task.toggleComplete();
             updateTaskList();
         })
     })

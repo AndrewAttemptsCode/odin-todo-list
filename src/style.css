@@ -293,6 +293,8 @@ button[type="submit"]:hover {
     right: 16px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
 
     opacity: 0;
     visibility: hidden;
@@ -308,6 +310,16 @@ button[type="submit"]:hover {
     cursor: pointer;
     height: 36px;
     width: 36px;
+}
+
+.task-checkbox {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.task-completed {
+    text-decoration: line-through;
 }
 
 /* Add Task Dialog */
