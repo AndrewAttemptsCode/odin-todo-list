@@ -1,4 +1,4 @@
-// update dom display of tasks removed/completed
+// update dom display of tasks completed
 
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
@@ -20,11 +20,12 @@ export function updateTaskList() {
         taskHeader.appendChild(taskTitle);
     }
 
+    let tasksContainer = mainContent.querySelector(".tasks-item-container");
+
     if (taskHeader && tasks.length === 0) {
         mainContent.removeChild(taskHeader);
+        mainContent.removeChild(tasksContainer);
     }
-    
-    let tasksContainer = mainContent.querySelector(".tasks-item-container");
 
     if (taskHeader && !tasksContainer) {
         tasksContainer = document.createElement("div");
@@ -72,7 +73,13 @@ export function updateTaskList() {
         removeTaskButton.classList.add("remove-task-button");
         taskHoverControls.appendChild(removeTaskButton);
 
-
         tasksContainer.appendChild(taskCard);
+
+        removeTaskButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const taskIndex = Number(taskCard.dataset.index);
+            toDoList.removeTask(taskIndex);
+            updateTaskList();
+        })
     })
 }

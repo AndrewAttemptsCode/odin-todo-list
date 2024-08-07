@@ -47,6 +47,10 @@ export class ToDoList {
         this.projects.splice(projectIndex, 1);
     }
 
+    removeTask(taskIndex) {
+        this.selectedProject.tasks.splice(taskIndex, 1);
+    }
+
     selectProject(projectName) {
         this.selectedProject = this.projects.find(project => project.name === projectName);
     }
