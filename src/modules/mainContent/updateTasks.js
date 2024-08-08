@@ -3,6 +3,9 @@
 
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
+import editTaskButtonImage from "../../images/edit.svg";
+import { editTaskForm } from "../editTaskForm/editTaskForm";
+import { editTaskFormEventListeners } from "../editTaskForm/editTaskFormEventListeners";
 
 export function updateTaskList() {
     const mainContent = document.querySelector(".main-content");
@@ -80,6 +83,12 @@ export function updateTaskList() {
         taskCheckBox.classList.add("task-checkbox");
         taskHoverControls.appendChild(taskCheckBox);
 
+        const editTaskButton = document.createElement("img");
+        editTaskButton.src = editTaskButtonImage;
+        editTaskButton.title = "Edit task";
+        editTaskButton.classList.add("edit-task-button");
+        taskHoverControls.appendChild(editTaskButton);
+
         const removeTaskButton = document.createElement("img");
         removeTaskButton.src = removeTaskButtonImage;
         removeTaskButton.title = "Remove task";
@@ -98,6 +107,14 @@ export function updateTaskList() {
         taskCheckBox.addEventListener("change", () => {
             task.toggleComplete();
             updateTaskList();
+        })
+
+        editTaskButton.addEventListener("click", () => {
+            const taskIndex = Number(taskCard.dataset.index);
+            editTaskForm(taskIndex);
+            const editTaskDialog = document.querySelector(".edit-task-dialog");
+            editTaskDialog.showModal();
+            editTaskFormEventListeners(taskIndex); // removed this flag for dupes check
         })
     })
 }

@@ -1,5 +1,4 @@
 import { loadProjectForm } from "../projectForm/projectForm";
-import { projectFormEventListeners } from "../projectForm/projectFormEventListeners";
 
 export function sideBarEventListeners() {
     loadProjectForm();
@@ -9,6 +8,5 @@ export function sideBarEventListeners() {
 
     addNewProjectButton.addEventListener("click", () => {
         projectDialog.showModal();
-        // projectFormEventListeners(); - set in index.js on dom load, prevent dupe listener
     })
 }

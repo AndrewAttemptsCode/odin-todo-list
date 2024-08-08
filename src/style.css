@@ -151,7 +151,8 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Add Project Dialog */
 
 .project-dialog,
-.task-dialog {
+.task-dialog,
+.edit-task-dialog {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -171,7 +172,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .project-menu-close,
-.task-menu-close {
+.task-menu-close,
+.edit-task-menu-close {
     border: none;
     background: #334155;
     color: #f1f5f9;
@@ -187,7 +189,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .project-menu-close:hover,
-.task-menu-close:hover {
+.task-menu-close:hover,
+.edit-task-menu-close:hover {
     background: #ff8080;
     cursor: pointer;
 }
@@ -306,7 +309,8 @@ button[type="submit"]:hover {
     visibility: visible;
 } 
 
-.remove-task-button {
+.remove-task-button,
+.edit-task-button {
     cursor: pointer;
     height: 36px;
     width: 36px;
@@ -324,7 +328,8 @@ button[type="submit"]:hover {
 
 /* Add Task Dialog */
 
-.task-form {
+.task-form,
+.edit-task-form {
     display: flex;
     flex-direction: column;
     padding: 10px;

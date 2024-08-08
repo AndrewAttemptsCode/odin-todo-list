@@ -79,7 +79,6 @@ export class ToDoList {
             this.selectedProject.editTask(taskIndex, title, description, priority, dueDate);
         } else
             console.log("No project selected");
-        }
     }
 
     getProjects() {
@@ -94,6 +93,7 @@ export class ToDoList {
             return [];
         }
     }
+     
 }
 
 export const toDoList = new ToDoList();
