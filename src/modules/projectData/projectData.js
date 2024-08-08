@@ -11,6 +11,13 @@ export class Task {
     toggleComplete() {
         this.completed = !this.completed;
     }
+
+    edit(title, description, priority, dueDate) {
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.dueDate = dueDate;
+    }
 }
 
 // Project Class
@@ -23,6 +30,10 @@ export class Project {
     addTask(title, description, priority, dueDate) {
         const task = new Task(title, description, priority, dueDate);
         this.tasks.push(task);
+    }
+
+    editTask(taskIndex, title, description, priority, dueDate) {
+        this.tasks[taskIndex].edit(title, description, priority, dueDate);
     }
 
     getTasks() {
@@ -59,6 +70,14 @@ export class ToDoList {
         if (this.selectedProject) {
             this.selectedProject.addTask(title, description, priority, dueDate);
         } else {
+            console.log("No project selected");
+        }
+    }
+
+    editTaskOfSelectedProject(taskIndex, title, description, priority, dueDate) {
+        if (this.selectedProject) {
+            this.selectedProject.editTask(taskIndex, title, description, priority, dueDate);
+        } else
             console.log("No project selected");
         }
     }
