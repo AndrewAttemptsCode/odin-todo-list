@@ -1,5 +1,5 @@
-// update dom to edit and update existing task
 // change taskCard background based on priority level
+// look up localStorage to save projects/tasks on page refresh
 
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
@@ -114,7 +114,7 @@ export function updateTaskList() {
             editTaskForm(taskIndex);
             const editTaskDialog = document.querySelector(".edit-task-dialog");
             editTaskDialog.showModal();
-            editTaskFormEventListeners(taskIndex); // removed this flag for dupes check
+            editTaskFormEventListeners(taskIndex);
         })
     })
 }
