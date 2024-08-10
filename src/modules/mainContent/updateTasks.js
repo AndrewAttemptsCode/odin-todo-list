@@ -1,5 +1,4 @@
 // change taskCard background based on priority level
-// look up localStorage to save projects/tasks on page refresh
 
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
@@ -106,6 +105,7 @@ export function updateTaskList() {
 
         taskCheckBox.addEventListener("change", () => {
             task.toggleComplete();
+            toDoList.saveToLocalStorage();
             updateTaskList();
         })
 
