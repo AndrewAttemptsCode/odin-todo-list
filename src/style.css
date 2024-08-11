@@ -271,9 +271,9 @@ button[type="submit"]:hover {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     width: 375px;
-    padding: 16px;
+    gap: 10px;
+    padding-bottom: 10px;
     background: #f1f5f9;
     border-radius: 5px;
 }
@@ -281,13 +281,21 @@ button[type="submit"]:hover {
 .task-card-title {
     display: flex;
     justify-content: center;
+    padding: 8px 0;
     color: #334155;
 }
 
 .task-card-description {
     height: 100px;
+    max-width: 85%;
     border: none;
     background: transparent;
+}
+
+.task-card-priority,
+.task-card-duedate,
+.task-card-description {
+    padding: 0 16px;
 }
 
 .task-hover-controls {
@@ -324,6 +332,32 @@ button[type="submit"]:hover {
 
 .task-completed {
     text-decoration: line-through;
+}
+
+/* Task Priority colours */
+
+.high-priority-header {
+    background: rgb(255, 198, 65);
+}
+
+.high-priority-body {
+    background: rgb(255, 167, 34);
+}
+
+.medium-priority-header {
+    background: rgb(255, 255, 165);
+}
+
+.medium-priority-body {
+    background: rgb(255, 237, 90);
+}
+
+.low-priority-header {
+    background: rgb(151, 255, 116);
+}
+
+.low-priority-body {
+    background: rgb(114, 245, 90);
 }
 
 /* Add Task Dialog */

@@ -1,5 +1,3 @@
-// change taskCard background based on priority level
-
 import { toDoList } from "../projectData/projectData";
 import removeTaskButtonImage from "../../images/delete.svg";
 import editTaskButtonImage from "../../images/edit.svg";
@@ -95,6 +93,17 @@ export function updateTaskList() {
         taskHoverControls.appendChild(removeTaskButton);
 
         tasksContainer.appendChild(taskCard);
+
+        if (task.priority === "High") {
+            taskCard.classList.add("high-priority-body");
+            title.classList.add("high-priority-header");
+        } else if (task.priority === "Medium") {
+            taskCard.classList.add("medium-priority-body");
+            title.classList.add("medium-priority-header");
+        } else if (task.priority === "Low") {
+            taskCard.classList.add("low-priority-body");
+            title.classList.add("low-priority-header");
+        }
 
         removeTaskButton.addEventListener("click", (event) => {
             event.stopPropagation();
